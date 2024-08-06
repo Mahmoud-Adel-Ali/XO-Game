@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xo_game/constant.dart';
+import 'package:xo_game/views/game_view.dart';
 import 'package:xo_game/widgets/custom_button.dart';
 
 class Home extends StatelessWidget {
@@ -19,7 +20,10 @@ class Home extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const GameView()));
+              },
               text: 'Start Game',
             ),
           ],
