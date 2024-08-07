@@ -8,16 +8,16 @@ class CustomXOBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: MediaQuery.sizeOf(context).height * 0.7,
-        width: 300.0,
         alignment: Alignment.center,
         padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(16.0)),
           color: const Color(0xff525D79),
           border: Border.all(color: Colors.black, width: 1.0),
         ),
         child: GridView.builder(
+          padding: EdgeInsets.zero,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
