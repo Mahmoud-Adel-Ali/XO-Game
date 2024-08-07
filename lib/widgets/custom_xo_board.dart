@@ -8,6 +8,9 @@ class CustomXOBoard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        height: MediaQuery.sizeOf(context).height * 0.7,
+        width: 300.0,
+        alignment: Alignment.center,
         padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(16.0)),
@@ -20,8 +23,8 @@ class CustomXOBoard extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: 3 / 4,
-            crossAxisSpacing: 8.0,
-            mainAxisSpacing: 8.0,
+            crossAxisSpacing: 4.0,
+            mainAxisSpacing: 4.0,
           ),
           itemCount: 9,
           itemBuilder: (context, index) {
