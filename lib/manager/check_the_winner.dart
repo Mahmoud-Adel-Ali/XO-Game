@@ -13,55 +13,34 @@ checkTheWinner(BuildContext context) {
   bool diagonal1 = (list[0] == list[4] && list[4] == list[8]);
   bool diagonal2 = (list[2] == list[4] && list[4] == list[6]);
 
-  if (counter == 9) {
-    if ((firstRow || firstCol || diagonal1) && list[0] == 'x') {
-      xWins(context);
-    } else if ((firstRow || firstCol || diagonal1) && list[0] == 'o') {
-      oWins(context);
-    } else if ((thirdRow || thirdCol || diagonal2) && list[8] == 'x') {
-      xWins(context);
-    } else if ((thirdRow || thirdCol || diagonal2) && list[8] == 'o') {
-      oWins(context);
-    } else if ((secondCol || secondRow) && list[4] == 'x') {
-      xWins(context);
-    } else if ((secondCol || secondRow) && list[4] == 'o') {
-      oWins(context);
-    } else {
-      counter = 0;
-      gameOver = true;
-      showAwesomDialog(context, title: 'Game Over!', desc: '');
-    }
-  } else {
-    if ((firstRow || firstCol || diagonal1) && list[0] == 'x') {
-      xWins(context);
-    } else if ((firstRow || firstCol || diagonal1) && list[0] == 'o') {
-      oWins(context);
-    } else if ((thirdRow || thirdCol || diagonal2) && list[8] == 'x') {
-      xWins(context);
-    } else if ((thirdRow || thirdCol || diagonal2) && list[8] == 'o') {
-      oWins(context);
-    } else if ((secondCol || secondRow) && list[4] == 'x') {
-      xWins(context);
-    } else if ((secondCol || secondRow) && list[4] == 'o') {
-      oWins(context);
-    }
+  if ((firstRow || firstCol || diagonal1) && list[0] == 'x') {
+    xWins(context);
+  } else if ((firstRow || firstCol || diagonal1) && list[0] == 'o') {
+    oWins(context);
+  } else if ((thirdRow || thirdCol) && list[8] == 'x') {
+    xWins(context);
+  } else if ((thirdRow || thirdCol) && list[8] == 'o') {
+    oWins(context);
+  } else if ((secondCol || secondRow) && list[4] == 'x') {
+    xWins(context);
+  } else if ((secondCol || secondRow) && list[4] == 'o') {
+    oWins(context);
+  } else if (diagonal2 && list[2] == 'x') {
+    xWins(context);
+  } else if (diagonal2 && list[2] == 'o') {
+    oWins(context);
+  } else if (counter == 9) {
+    gameOver = true;
+    showAwesomDialog(context, title: 'Game Over!', desc: '');
   }
 }
 
 void oWins(BuildContext context) {
-  counter = 0;
-  boardCells = ['', '', '', '', '', '', '', '', ''];
   gameOver = true;
-  currentPlayer = 'o';
-  changeXO = false;
   showAwesomDialog(context, title: 'Player O wins!', desc: '');
 }
 
 void xWins(BuildContext context) {
-  counter = 0;
-  boardCells = ['', '', '', '', '', '', '', '', ''];
   gameOver = true;
-  currentPlayer = 'o';
-  changeXO = false;
   showAwesomDialog(context, title: 'Player X wins!', desc: '');
 }

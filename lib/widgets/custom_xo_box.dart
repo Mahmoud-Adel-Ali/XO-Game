@@ -28,14 +28,32 @@ class _CustomXOBoxState extends State<CustomXOBox> {
           : isClicked
               ? null
               : () {
+                  print('=================');
+                  print('counter $counter');
+                  print('isClicked $isClicked');
+                  print(
+                      'boardCells[${widget.index}] ${boardCells[widget.index]}');
+                  print('xIsPlay $xIsPlay');
+                  print('currentPlayer $currentPlayer');
+                  print('gameOver $gameOver');
+                  isClicked = true;
+                  counter++;
+                  boardCells[widget.index] = currentPlayer;
+                  xIsPlay = !xIsPlay;
+                  currentPlayer = xIsPlay ? 'x' : 'o';
+                  setState(() {});
                   setState(() {
-                    isClicked = true;
-                    counter++;
-                    currentPlayer = changeXO ? 'x' : 'o';
-                    changeXO = !changeXO;
-                    boardCells[widget.index] = currentPlayer;
                     checkTheWinner(context);
                   });
+                  print('=================');
+                  print('counter $counter');
+                  print('isClicked $isClicked');
+                  print(
+                      'boardCells[${widget.index}] ${boardCells[widget.index]}');
+                  print('xIsPlay $xIsPlay');
+                  print('currentPlayer $currentPlayer');
+                  print('gameOver $gameOver');
+                  print('=================');
                 },
       child: Container(
         height: 135,
@@ -47,7 +65,7 @@ class _CustomXOBoxState extends State<CustomXOBox> {
           border: Border.all(color: Colors.black12, width: 2),
         ),
         child: isClicked
-            ? currentPlayer == 'x'
+            ? boardCells[widget.index] == 'x'
                 ? const XChar()
                 : const OChar()
             : null,
