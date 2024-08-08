@@ -2,7 +2,7 @@ import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:xo_game/constant.dart';
 import 'package:xo_game/core/animations/animate_do.dart';
-import 'package:xo_game/views/home.dart';
+import 'package:xo_game/views/home_view.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -28,7 +28,7 @@ class SplashView extends StatelessWidget {
           ),
           logoWidth: 100,
           showLoader: false,
-          navigator: const Home(),
+          navigator: const HomeView(),
           durationInSeconds: 5,
         ),
       ),

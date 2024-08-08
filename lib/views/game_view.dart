@@ -7,9 +7,11 @@ class GameView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: mainColor,
-      body: GameViewBody(),
+    return const SafeArea(
+      child: Scaffold(
+        backgroundColor: mainColor,
+        body: GameViewBody(),
+      ),
     );
   }
 }

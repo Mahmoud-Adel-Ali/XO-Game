@@ -37,10 +37,12 @@ checkTheWinner(BuildContext context) {
 
 void oWins(BuildContext context) {
   gameOver = true;
+  numOfWinsForO++;
   showAwesomDialog(context, title: 'Player O wins!', desc: '');
 }
 
 void xWins(BuildContext context) {
   gameOver = true;
+  numOfWinsForX++;
   showAwesomDialog(context, title: 'Player X wins!', desc: '');
 }

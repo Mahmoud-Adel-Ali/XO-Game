@@ -22,7 +22,7 @@ class CustomXOBoard extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            childAspectRatio: 3 / 4,
+            // childAspectRatio: 3 / 4,
             crossAxisSpacing: 4.0,
             mainAxisSpacing: 4.0,
           ),

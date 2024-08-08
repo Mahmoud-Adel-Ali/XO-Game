@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       color: color ?? Colors.cyan,
       minWidth: MediaQuery.sizeOf(context).width*0.7,
-      height: 60,
+      height: 50,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
@@ -29,6 +29,7 @@ class CustomButton extends StatelessWidget {
         text,
         style: TextStyle(
           color: textColor ?? Colors.white,
+          fontSize: 20
         ),
       ),
     );

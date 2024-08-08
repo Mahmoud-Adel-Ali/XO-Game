@@ -3,8 +3,8 @@ import 'package:xo_game/constant.dart';
 import 'package:xo_game/views/game_view.dart';
 import 'package:xo_game/widgets/custom_button.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomeView extends StatelessWidget {
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
