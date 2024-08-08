@@ -45,7 +45,6 @@ class _GameViewBodyState extends State<GameViewBody> {
               counter = 0;
               boardCells = ['', '', '', '', '', '', '', '', ''];
               gameOver = false;
-              turnXOBoard = !turnXOBoard;
               currentPlayer = turnXOBoard ? 'x' : 'o';
               xIsPlay = turnXOBoard;
               Navigator.of(context).pushReplacement(

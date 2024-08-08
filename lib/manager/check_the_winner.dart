@@ -1,5 +1,8 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:xo_game/data/board_data.dart';
+import 'package:xo_game/views/game_view.dart';
+import 'package:xo_game/widgets/custom_button.dart';
 import 'package:xo_game/widgets/show_awesome_dialog.dart';
 
 checkTheWinner(BuildContext context) {
@@ -31,18 +34,48 @@ checkTheWinner(BuildContext context) {
     oWins(context);
   } else if (counter == 9) {
     gameOver = true;
-    showAwesomDialog(context, title: 'Game Over!', desc: '');
+    showAwesomDialog(context,
+        title: 'Game Over!', desc: '', dialogType: DialogType.error);
   }
 }
 
 void oWins(BuildContext context) {
-  gameOver = true;
   numOfWinsForO++;
-  showAwesomDialog(context, title: 'Player O wins!', desc: '');
+  boardMessage(context, title: 'Player O wins!');
 }
 
 void xWins(BuildContext context) {
-  gameOver = true;
   numOfWinsForX++;
-  showAwesomDialog(context, title: 'Player X wins!', desc: '');
+  boardMessage(context, title: 'Player X wins!');
+}
+
+boardMessage(BuildContext context, {required String title}) {
+  gameOver = true;
+  showAwesomDialog(
+    context,
+    title: title,
+    desc: 'desc',
+    btnCancel: CustomButton(
+      onPressed: () {
+        Navigator.pop(context);
+        counter = 0;
+        boardCells = ['', '', '', '', '', '', '', '', ''];
+        gameOver = false;
+        turnXOBoard = !turnXOBoard;
+        currentPlayer = turnXOBoard ? 'x' : 'o';
+        xIsPlay = turnXOBoard;
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const GameView()));
+      },
+      text: 'Clean Board',
+      color: Colors.red.shade900,
+    ),
+    btnOk: CustomButton(
+      onPressed: () {
+        Navigator.pop(context);
+      },
+      text: 'Ok',
+      color: Colors.green.shade900,
+    ),
+  );
 }
