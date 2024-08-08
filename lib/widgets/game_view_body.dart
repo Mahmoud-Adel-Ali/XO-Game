@@ -50,7 +50,7 @@ class _GameViewBodyState extends State<GameViewBody> {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => const GameView()));
             },
-            text: 'Reset Bord'),
+            text: 'Reset Board'),
         const Expanded(child: SizedBox()),
       ],
     );
