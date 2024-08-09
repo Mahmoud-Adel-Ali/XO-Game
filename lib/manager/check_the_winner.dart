@@ -75,7 +75,7 @@ boardMessage(BuildContext context, {required String title}) {
     context,
     title: title,
     desc: '',
-    btnCancel: CustomButton(
+    btnOk: CustomButton(
       onPressed: () {
         Navigator.pop(context);
         counter = 0;
@@ -86,13 +86,6 @@ boardMessage(BuildContext context, {required String title}) {
         xIsPlay = turnXOBoard;
         Navigator.of(context).pushReplacement(
             MaterialPageRoute(builder: (context) => const GameView()));
-      },
-      text: 'New board',
-      color: Colors.red.shade900,
-    ),
-    btnOk: CustomButton(
-      onPressed: () {
-        Navigator.pop(context);
       },
       text: 'Ok',
       color: Colors.green.shade900,
