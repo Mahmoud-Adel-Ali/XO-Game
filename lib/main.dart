@@ -16,7 +16,6 @@ Future<void> main() async {
 class XOGame extends StatelessWidget {
   const XOGame({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

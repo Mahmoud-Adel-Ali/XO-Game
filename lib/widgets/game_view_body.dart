@@ -25,7 +25,6 @@ class _GameViewBodyState extends State<GameViewBody> {
       setState(() {});
     }
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomXOScore(
             numOfWinsForO: numOfWinsForO, numOfWinsForX: numOfWinsForX),

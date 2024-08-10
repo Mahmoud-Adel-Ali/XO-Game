@@ -15,21 +15,19 @@ class HomeView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/xo-logo.png',
-              height: 200,
-            ),
+            Image.asset('assets/images/xo-logo.png', height: 200),
             const SizedBox(height: 30),
             CustomButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const GameView()));
               },
-              text:(numOfWinsForO > 0 || numOfWinsForX > 0)? 'Complete Game': 'Start Game',
+              text: (numOfWinsForO > 0 || numOfWinsForX > 0)
+                  ? 'Complete Game'
+                  : 'Start Game',
               color: Colors.orange.shade900,
             ),
             const SizedBox(height: 40),
-            
             CustomButton(
               onPressed: () {
                 counter = 0;
